@@ -1,0 +1,11 @@
+{
+  "Train_parameter": {
+    "Num_batch": 16, 
+    "Num_training": 600000
+  }, 
+  "Network_parameter": {
+    "LR": 0.0001, 
+    "Num_Node_A": 512, 
+    "Num_Node_C": 512
+  }
+}
