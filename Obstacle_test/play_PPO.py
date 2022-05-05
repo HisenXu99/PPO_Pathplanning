@@ -34,7 +34,7 @@ class play:
         
         self.date_time = str(datetime.date.today())
 
-        self.loadpath= 'Obstacle/saved_networks/practice/2022-04-14-20_55_42'
+        self.loadpath= 'Obstacle/saved_networks/practice/2022-04-20-21_48_24'
 
         # Initial parameters
         # ------------------------------

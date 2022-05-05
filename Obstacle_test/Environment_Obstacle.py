@@ -182,15 +182,15 @@ class envmodel():
                 print("Obstacle!!!!!")
                 break
 
-        if abs(self.d_last - self.d)>2:
-            a = np.array([[self.d,self.d_last,reward]]) 
-            with open('Obstacle/saved_networks/'+'s.txt','a') as f:             
-                    np.savetxt(f, a, delimiter='\t', fmt = '%s')
-            reward=0
-            self.i=self.i+1
+        # if abs(self.d_last - self.d)>2:
+        #     a = np.array([[self.d,self.d_last,reward]]) 
+        #     with open('Obstacle/saved_networks/'+'s.txt','a') as f:             
+        #             np.savetxt(f, a, delimiter='\t', fmt = '%s')
+        #     reward=0
+        #     self.i=self.i+1
         
-        if self.i>=10:
-            sys.exit(0)
+        # if self.i>=10:
+        #     sys.exit(0)
 
         # a = np.array([[self.d,self.d_last,reward]]) 
         # with open('Obstacle/saved_networks/'+'s.txt','a') as f:             

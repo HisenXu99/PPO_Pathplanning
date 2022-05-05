@@ -34,7 +34,7 @@ class play:
         
         self.date_time = str(datetime.date.today())
 
-        self.loadpath= 'Obstacle/saved_networks/practice/2022-04-14-20_55_42'
+        self.loadpath= 'Obstacle/saved_networks/practice/2022-04-15-11_14_51'
 
         # Initial parameters
         # ------------------------------
@@ -97,7 +97,8 @@ class play:
             },  
             'Train_parameter': {  
                 'Num_batch':self.Num_batch,
-                'Num_training':self.Num_training 
+                'Num_training':self.Num_training ,
+                "Load":self.loadpath
             }  
         }
         js = json.dumps(msg, indent=2) 

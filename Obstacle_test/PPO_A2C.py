@@ -48,10 +48,6 @@ class PPO:
         self.lr=LR
 
 
-        # date - hour - minute - second of training time
-        # self.date_time = str(datetime.date.today())
-        self.date_time = datetime.datetime.now().strftime("%Y-%m-%d-%H_%M_%S")
-        os.makedirs( 'Obstacle/saved_networks/'+self.date_time)
 
         self.load_path = loadpath
 
@@ -62,7 +58,7 @@ class PPO:
 
 #######################################Initialize Network###############################
         self.network()
-        self.sess,self.saver,self.writer=self.init_sess()
+        self.sess,self.saver=self.init_sess()
         pass
 
     def weight_variable(self, shape):
@@ -210,20 +206,10 @@ class PPO:
         init = tf.global_variables_initializer()
         sess.run(init)
         saver = tf.train.Saver()
-        # Load the file if the saved file exists
-        check_save = input('Load Model? (1=yes/2=no): ')
-        if check_save == 1:
-            # Restore variables from disk.
-            saver.restore(sess, self.load_path + "/model.ckpt")
-            print("Model restored.")
-            #TODO:这里只是PPO.Num_training
-            check_train = input('Inference or Training? (1=Inference / 2=Training): ')
-            if check_train == 1:
-                self.Num_start_training = 0
-                self.Num_training = 0
-        log_dir = 'Obstacle/logs/' +self.date_time 
-        writer=tf.summary.FileWriter(log_dir, tf.get_default_graph())
-        return sess,saver,writer
+        saver.restore(sess, self.load_path + "/model.ckpt")
+        print("Model restored.")
+
+        return sess,saver
 
     def choose_action(self,s,image):
         probs = self.sess.run(self.acts_prob, {self.s:s,self.x_image:image})   # get probabilities for all actions

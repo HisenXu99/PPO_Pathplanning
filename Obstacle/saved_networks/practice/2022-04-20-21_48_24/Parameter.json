@@ -1,0 +1,13 @@
+{
+  "Train_parameter": {
+    "Num_batch": 16, 
+    "Num_training": 600000, 
+    "Load": "Obstacle/saved_networks/practice/2022-04-15-11_14_51"
+  }, 
+  "Network_parameter": {
+    "Image_output": 4, 
+    "LR": 0.0001, 
+    "Num_Node_A": 512, 
+    "Num_Node_C": 512
+  }
+}
